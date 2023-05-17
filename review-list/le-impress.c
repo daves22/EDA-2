@@ -7,9 +7,25 @@ struct celula *prox;
 } celula;
 
 void imprime (celula *le){
-
+    celula *num = le->prox;
+    if (num!=NULL)
+    {
+        printf("%d", num->dado);
+        printf(" -> ");
+        num = num -> prox;
+    }else{
+        printf("NULL\n");
+    }
 }
 
-void imprime_rec (celula *le){
-    
+void imprime_rec(celula *le){
+    celula *num = le->prox;
+    if(num!=NULL)
+    {
+        printf("%d", num->dado);
+        printf(" -> ");
+        imprime_rec(num->prox);
+    }else{
+        printf("NULL\n");
+    }
 }
